@@ -1,0 +1,274 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE ANALYTIC EYE NEWSLETTER</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: medium;
+            background-image: url(images/backround.png);
+            background-color: #f5edfb;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-image: url(images/stars\ and\ paper.png);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            color: #000000,;
+        }
+
+        img {width: 100px; border-radius: 50px; float: left; margin-top: 10px;}
+        p {text-align: center; color: #000000;}
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-size: 14px;
+            color: #555;
+        }
+        input[type="email"], input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .subscribe-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #a73914;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            cursor: pointer; ;
+        }
+        .subscribe-btn:hover {
+            background-color: #a73914;
+        }
+        .newsletter-archive {
+            margin-top: 30px;
+        }
+        .newsletter-archive h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .newsletter-archive a {
+            display: block;
+            text-decoration: none;
+            color: #a73914;
+            margin-bottom: 5px;
+        }
+        .newsletter-archive a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        footer a {
+            text-decoration: none;
+            color: #555;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .newsletter-preview {
+            margin-top: 30px;
+        }
+        .newsletter-preview h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .newsletter-preview p {
+            color: #555;
+        }
+        .popup, .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .popup-content, .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .close-btn, .close {
+            color: red;
+            font-size: 24px;
+            float: right;
+            cursor: pointer;
+        }
+
+        #confirmation-message {
+            display: none;
+            text-align: center;
+            color: green;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img id="weblogo" src="images/the Analytic eye Logo.png" alt="Logo">
+        <h1>Subscribe To Our Newsletter</h1>
+        <p>Get the latest updates delivered straight to your inbox!</p>
+
+        <!-- Subscription Form -->
+        <form id="subscribeForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Choose a Category</label>
+                <select id="category" name="category">
+                    <option value="Productivity & Creativity">Productivity & Creativity</option>
+                    <option value="Philosophy & Existentialism">Philosophy & Existentialism</option>
+                    <option value="Art & Symbolism">Art & Symbolism</option>
+                    <option value="Morbid Curiosity & Death">Morbid Curiosity & Death</option>
+                    <option value="Literary Analysis">Literary Analysis</option>
+                    <option value="Econimics">Economics</option>
+                    <option value="Psycology">Psychology</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="frequency">How often do you want to receive newsletters?</label>
+                <select id="frequency" name="frequency">
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+            <button type="submit" class="subscribe-btn">Subscribe</button>
+        </form>
+
+        <!-- Confirmation Message -->
+        <div id="confirmation-message">
+            <p>Thank you for subscribing! Please check your email for confirmation.</p>
+        </div>
+
+        <!-- Newsletter Archive -->
+        <div class="newsletter-archive">
+            <h2>Newsletter Archive</h2>
+            <a href="#">Issue #1: January 2024</a>
+            <a href="#">Issue #2: February 2024</a>
+            <a href="#">Issue #3: March 2024</a>
+        </div>
+
+        <!-- Newsletter Preview -->
+        <div class="newsletter-preview">
+            <h2>Preview Our Latest Newsletter</h2>
+            <p>In this edition, we will talk about productivity charts</p>
+            <a href="#">Read More</a>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://github.com/RatiLynn"><img src="images/github-6980894_960_720.webp" alt="Github"></a>
+            <a href="http://www.youtube.com/@RatiTheAnalyst"><img src="images/youtube-150.png" alt="Youtube"></a>
+            <a href="https://www.reddit.com/user/krissyohlynn/"><img src="images/reddit-logo-reddit-icon-transparent-free-png.webp" alt="Reddit"></a>
+        </div>
+    </div>
+
+    <!-- Modal for Subscription -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign up for our Newsletter</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Rati Lynn. All rights reserved.</p>
+        <p>Contact us: <a href="Rati:kristinoratile@outlook.com">kristinoratile@outlook.com</a></p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Form Submission and Confirmation Message
+        document.getElementById('subscribeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('confirmation-message').style.display = 'block';
+        });
+
+        // Modal Functionality
+        var modal = document.getElementById("modal");
+        var btn = document.getElementById("modalBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
